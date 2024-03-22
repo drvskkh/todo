@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-export const TodoForm = () => {
+export const TodoForm = ({ addTodo }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
+    addTodo(value);
+    setValue("");
   };
 
   const [value, setValue] = useState("");
@@ -13,6 +14,7 @@ export const TodoForm = () => {
       <input
         type="text"
         className="todo-input"
+        value={value}
         placeholder="ну давай, вводи свою задачу"
         onChange={(e) => setValue(e.target.value)}
       />
