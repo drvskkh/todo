@@ -4,12 +4,6 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 18px;
   color: var(--light);
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 50px;
-  margin: 20px 0 20px 0;
 }
 
 :root {
@@ -19,30 +13,59 @@ h1 {
   --light-hover: #e2edf5;
   --accent: #0d87e0;
   --accent-hover: #329ae7;
+  --green: #39ea35;
+  --red: #ea3535;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px 0 20px 0;
 }
 
 body {
   background-color: var(--dark);
 }
 
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  /* background-color: var(--dark-hover); */
-  margin: auto;
-  width: 80%;
-  height: 100vh;
-}
+  width: 100%;
+} */
 
 .TodoWrapper {
+  background-color: var(--dark-hover);
+  align-items: center;
   flex-direction: column;
   display: flex;
-  width: 100%;
+  margin: 40px auto;
+  width: 40%;
+  padding: 0 40px 30px 40px;
+  border-radius: 20px;
 }
 .TodoForm {
-  /* margin: 20px 0 20px 0; */
+  margin: 10px 0 10px 0;
   display: flex;
   width: 100%;
 }
@@ -66,13 +89,9 @@ input[type="text"]:focus {
   border: 3px solid var(--accent);
   transition: 0.25s;
 }
-input[type="text"]:focus::-webkit-input-placeholder {
-  opacity: 0;
-  transition: 0.25s;
-}
 button {
+  cursor: pointer;
   text-align: end;
-  width: 15%;
   background-color: var(--accent);
   color: var(--light);
   border: 3px solid var(--accent);
@@ -91,6 +110,7 @@ button:active {
 }
 
 .Todo {
+  width: calc(100% - 40px);
   margin: 10px 0 10px 0;
   display: flex;
   justify-content: space-between;
@@ -98,6 +118,23 @@ button:active {
   background-color: var(--accent);
   border-radius: 10px;
   padding: 10px 20px 10px 20px;
+}
+.completed {
+  opacity: 0.5;
+}
+.incomplete {
+  opacity: 1;
+}
+.todoText {
+  user-select: none;
+  cursor: pointer;
+}
+.actions {
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  cursor: pointer;
 }
 svg {
   margin: 0 0 0 10px;

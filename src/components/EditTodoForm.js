@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-export const TodoForm = ({ addTodo }) => {
+export const EditTodoForm = ({ editTodo, task }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(value);
+    editTodo(value, task.id);
     setValue("");
   };
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(task.task);
 
   return (
     <form className="TodoForm" onSubmit={handleSubmit}>
@@ -15,11 +15,11 @@ export const TodoForm = ({ addTodo }) => {
         type="text"
         className="todo-input"
         value={value}
-        placeholder="запиши новую задачу"
+        placeholder="обнови задачу"
         onChange={(e) => setValue(e.target.value)}
       />
       <button type="submit" className="todo-btn">
-        добавить
+        обновить
       </button>
     </form>
   );
